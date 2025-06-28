@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+.docker/
+
+# Logs
+*.log
+logs/
+/var/log/
+
+# Experiment data (large files)
+workspace/experiments/*/images/*.jpg
+workspace/experiments/*/images/*.png
+workspace/experiments/*/images/*.jpeg
+workspace/experiments/*/scripts/*.py
+workspace/experiments/*/scripts/*.txt
+
+# Model files (large)
+workspace/Qwen*/
+workspace/**/model.bin
+workspace/**/pytorch_model.bin
+workspace/**/*.safetensors
+workspace/**/*.bin
+
+# Temporary files
+*.tmp
+*.temp
+workspace/generated_script.py
+
+# ROS specific
+workspace/build/
+workspace/install/
+workspace/log/
+
+# Camera and sensor data
+*.bag
+*.rosbag 

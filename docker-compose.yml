@@ -1,0 +1,32 @@
+services:
+  ros2-desktop-ai-robot:
+    image: airobotbook/ros2-desktop-ai-robot-book-humble
+    container_name: ros2-docker
+    environment:
+      - RESOLUTION=1920x1080
+      # NVIDIA環境変数
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    ports:
+      - "15900:5900"   # VNC
+      - "13389:3389"   # RDP
+      - "9090:9090"    # ROS Bridge
+      - "9687:9687"    # Additional port
+      - "6080:80"      # noVNC web interface
+    volumes:
+      # メインワークスペースのマウント
+      - ./workspace:/home/ubuntu/workspace
+    shm_size: 512m
+    privileged: true
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    # GPU サポートを有効化
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: ["bash", "-c", "mkdir -p /var/log/supervisor && /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"] 

@@ -1,0 +1,13 @@
+openai==1.91.0
+rclpy
+numpy
+geometry-msgs
+jinja2
+typeguard
+git+https://github.com/huggingface/transformers
+qwen-vl-utils
+torch
+torchvision
+torchaudio
+accelerate>=0.26.0
+opencv-python
